@@ -3,7 +3,9 @@ class CalendarsController < ApplicationController
   # １週間のカレンダーと予定が表示されるページ
   def index
     get_week
+
     @plan = Plan.all
+
   end
 
   # 予定の保存
@@ -46,6 +48,7 @@ class CalendarsController < ApplicationController
         plans: today_plans,
         wday: wdays[wday_num]
       }
+
       @week_days.push(days)
     end
 
